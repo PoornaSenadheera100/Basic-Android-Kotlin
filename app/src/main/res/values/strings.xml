@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Kotlin Basics</string>
+
+    <string name="tv_msg1">Happy Birthday, Sam!</string>
+    <string name="tv_msg2">From Poorna.</string>
 </resources>
