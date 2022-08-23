@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickBtn(view: View){
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, DiceRoller::class.java)
         startActivity(intent)
     }
 }
