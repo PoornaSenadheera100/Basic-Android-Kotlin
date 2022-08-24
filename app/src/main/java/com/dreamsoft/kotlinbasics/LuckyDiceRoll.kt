@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class LuckyDiceRoll : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,8 +17,23 @@ class LuckyDiceRoll : AppCompatActivity() {
         val btn_roll : Button = findViewById(R.id.btn_luckyRoll)
 
         btn_roll.setOnClickListener {
-            val number : Int = (1..6).random()
-            result.text = number.toString()
+            if(luckyNumber.text.isEmpty()){
+                luckyNumber.setError("Enter the Lucky Number")
+            }
+            else if(Integer.parseInt(luckyNumber.text.toString()) > 6){
+                luckyNumber.setError("Enter a number between 1 to 6")
+            }
+            else{
+                val number : Int = (1..6).random()
+                result.text = number.toString()
+
+                if(number == Integer.parseInt(luckyNumber.text.toString())){
+                    Toast.makeText(this, "You're Lucky!!!", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    Toast.makeText(this, "Try Again...", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }
