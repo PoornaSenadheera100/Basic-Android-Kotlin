@@ -1,7 +1,9 @@
 package com.dreamsoft.kotlinbasics
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -24,6 +26,11 @@ class DiceRoller : AppCompatActivity() {
         val dice = Dice(6)
         val tv_result : TextView = findViewById(R.id.tv_result)
         tv_result.text = dice.roll().toString()
+    }
+
+    public fun onClickBtnLuckyDiceRoll(view: View){
+        val intent = Intent(this, LuckyDiceRoll::class.java)
+        startActivity(intent)
     }
 }
 
