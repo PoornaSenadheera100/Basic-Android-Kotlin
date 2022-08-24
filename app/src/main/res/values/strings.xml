@@ -6,4 +6,5 @@
     <string name="btn_diceRoller">Dice Roller</string>
 
     <string name="btn_roll">Roll</string>
+    <string name="btn_luckyDiceRoll">Lucky Dice Roll</string>
 </resources>
