@@ -12,11 +12,23 @@ class DiceRoller : AppCompatActivity() {
         setContentView(R.layout.activity_dice_roller)
 
         val btn_roll : Button = findViewById(R.id.btn_roll)
-        val tv_result : TextView = findViewById(R.id.tv_result)
+
 
         btn_roll.setOnClickListener {
             val toast = Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
-            tv_result.text = "6";
+            rollDice()
         }
+    }
+
+    private fun rollDice(){
+        val dice = Dice(6)
+        val tv_result : TextView = findViewById(R.id.tv_result)
+        tv_result.text = dice.roll().toString()
+    }
+}
+
+class Dice(val numOfSides : Int){
+    fun roll() : Int {
+        return (1..numOfSides).random()
     }
 }
