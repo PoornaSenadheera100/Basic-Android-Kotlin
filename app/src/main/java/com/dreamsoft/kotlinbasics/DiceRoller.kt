@@ -26,7 +26,27 @@ class DiceRoller : AppCompatActivity() {
     private fun rollDice(){
         val dice = Dice(6)
         val img_dice : ImageView = findViewById(R.id.img_diceDiceRoller)
-        img_dice.setImageResource(R.drawable.dice_2)
+        val num = dice.roll()
+        if(num == 1){
+            img_dice.setImageResource(R.drawable.dice_1)
+        }
+        else if (num == 2){
+            img_dice.setImageResource(R.drawable.dice_2)
+        }
+        else if (num == 3){
+            img_dice.setImageResource(R.drawable.dice_3)
+        }
+        else if (num == 4){
+            img_dice.setImageResource(R.drawable.dice_4)
+        }
+        else if (num == 5){
+            img_dice.setImageResource(R.drawable.dice_5)
+        }
+        else{
+            img_dice.setImageResource(R.drawable.dice_6)
+        }
+
+
     }
 
     public fun onClickBtnLuckyDiceRoll(view: View){
