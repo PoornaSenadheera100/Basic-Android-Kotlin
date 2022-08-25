@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -24,8 +25,8 @@ class DiceRoller : AppCompatActivity() {
 
     private fun rollDice(){
         val dice = Dice(6)
-        val tv_result : TextView = findViewById(R.id.tv_result)
-        tv_result.text = dice.roll().toString()
+        val img_dice : ImageView = findViewById(R.id.img_diceDiceRoller)
+        img_dice.setImageResource(R.drawable.dice_2)
     }
 
     public fun onClickBtnLuckyDiceRoll(view: View){
